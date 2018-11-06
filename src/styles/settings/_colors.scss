@@ -1,15 +1,21 @@
 // Primary
 $color-accent: #6A1991;
+$color-secondary: #E41095;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-background: $color-white;
 
+// Font colors
+$color-heading: $color-accent;
+$color-text: #461936;
+$color-text-subdued: #5A3D51;
 
 // Buttons
 $button-radius: 300px;
-
 $color-button-text: $color-white;
 $color-button-background: $color-accent;
+$color-button-text-hover: morph($color-white);
+$color-button-background-hover: darken($color-button-background, 5%);
 
 $color-button-secondary-text: $color-accent;
 $color-button-secondary-background: mix($color-background, $color-accent, 0.5);

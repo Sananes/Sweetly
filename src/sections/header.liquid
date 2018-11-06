@@ -10,7 +10,8 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<section data-section-id="{{ section.id }}" data-section-type="header" class="site-header">
+
+  {% capture announcment_banner %}
   <div class="site-header-container">
     {%- if section.settings.announcement_bar_enabled -%}
       <div>
@@ -25,7 +26,18 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+    {% endcapture %}
 
+  {% capture header_burger_button %}
+    <div class="mobile-navigation-toggle">
+      {% include 'icon' with 'menu' %}
+      <div class="nav-toggle-ie-11">
+        {% include 'icon' with 'close' %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  {% capture sweetly_logo %}
     <header role="banner">
       {% if template.name == 'index' %}
         <h1>
@@ -35,9 +47,10 @@
           <a href="/" class="logo-image">
             {% if section.settings.logo != blank %}
               {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-              <img src="{{ section.settings.logo | img_url: image_size }}"
+              {% comment %} <img src="{{ section.settings.logo | img_url: image_size }}"
                   srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                  alt="{{ section.settings.logo.alt | default: shop.name }}">
+                  alt="{{ section.settings.logo.alt | default: shop.name }}"> {% endcomment %}
+              {% include 'icon' with 'sweetly' %}
             {% else %}
               {{ shop.name }}
             {% endif %}
@@ -47,7 +60,6 @@
       {% else %}
         </div>
       {% endif %}
-
       {% comment %} <a href="/cart">
         {% include 'icon-cart' %}
         {{ 'layout.cart.title' | t }}
@@ -71,8 +83,11 @@
         </button>
       </form> {% endcomment %}
     </header>
+  {% endcapture %}
 
-    <nav class="site-navigation" role="navigation">
+  {% capture header_desktop_navigation %}
+
+    {% comment %} <nav class="site-navigation" role="navigation">
       <ul>
         {% for link in linklists[section.settings.menu].links %}
           {% if link.links != blank %}
@@ -100,8 +115,30 @@
           {% endif %}
         {% endfor %}
       </ul>
-    </nav>
+    </nav> {% endcomment %}
 
+    <nav class="site-navigation site-navigation-desktop" role="navigation">
+      <ul>
+        <li>
+          <a href="#">On the menu</a>
+        </li>
+        <li>
+          <a href="#">Pricing</a>
+        </li>
+        <li>
+          <a href="#">Recipes</a>
+        </li>
+        <li>
+          <a href="#">Blog</a>
+        </li>
+        <li>
+          <a href="#">Gifts</a>
+        </li>
+      </ul>
+    </nav>
+  {% endcapture %}
+
+  {% capture header_actions %}
     <ul class="site-header-action">
       {% if shop.customer_accounts_enabled %}
         {% if customer %}
@@ -126,6 +163,14 @@
         {% endif %}
       {% endif %}
     </ul>
+{% endcapture %}
+
+<section data-section-id="{{ section.id }}" data-section-type="header" class="site-header">
+  <div class="site-header-container">
+    {{ header_burger_button }}
+    {{ sweetly_logo }}
+    {{ header_desktop_navigation }}
+    {{ header_actions }}
   </div>
 </section>
 

@@ -1,0 +1,5 @@
+footer {
+  @extend %layout-container;
+  padding-top: $spacing-l;
+  padding-bottom: $spacing-l;
+}

@@ -1,10 +1,12 @@
-.site-header-container {
-  @extend %layout-container, %clearfix;
+.site-header {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding-top: $spacing-s;
-  padding-bottom: $spacing-s;
+  background: transparent;
+  transition: background-color $transition-long ease;
+  transition-delay: 0.2s;
+
+  &:hover {
+    background: $color-background;
+  }
 
   header {
     display: inline-block;
@@ -12,9 +14,25 @@
     h1 { margin: 0; }
 
     .logo-image {
+      color: $color-secondary;
+      min-width: 100px;
       max-height: 50px;
+      margin-top: $spacing-s;
+    }
+
+    @include media(max-width medium) {
+      flex: 1;
     }
   }
+}
+
+.site-header-container {
+  @extend %layout-container, %clearfix;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: $spacing-s;
+  padding-bottom: $spacing-s;
 }
 
 .site-navigation {
@@ -24,11 +42,22 @@
   li {
     @include font-size($fs-body);
     display: inline-block;
-    margin: 0 $spacing-s;
 
     a {
-      padding: $spacing-s 0;
+      padding: $spacing-l $spacing-m;
+      color: $color-text;
+      transition: color $transition-medium $ease-out-quad;
+
+      &:hover {
+        color: $color-accent;
+      }
     }
+  }
+}
+
+.site-navigation-desktop {
+  @include media(max-width medium) {
+    display: none;
   }
 }
 
@@ -44,5 +73,38 @@
 
   #customer_register_link {
     @extend %button-primary;
+  }
+
+  #customer_login_link {
+    @include media(max-width small) {
+      display: none;
+    }
+  }
+}
+
+.mobile-navigation-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 3rem;
+  margin-right: $spacing-s;
+  margin-left: -$spacing-s;
+  cursor: pointer;
+  transition: color $transition-medium ease;
+
+  &:hover {
+    color: $color-text;
+  }
+
+  @include media(medium) {
+    display: none;
+  }
+
+  .icon-close {
+    @extend %center-within;
+    position: absolute;
+    display: none;
   }
 }

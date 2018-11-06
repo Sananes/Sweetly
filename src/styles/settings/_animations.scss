@@ -1,0 +1,117 @@
+// Transitions
+$transition-short: 0.15s;
+$transition-medium: 0.25s;
+$transition-long: 0.5s;
+
+$ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$ease-out-ripple: cubic-bezier(0.330, 0.810, 0.585, 0.990);
+$ease-bubble: cubic-bezier(0.3, 0, 0, 1);
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    animation-timing-function: $ease-bubble;
+  }
+
+  76.92% {
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sneak-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation-timing-function: $ease-bubble;
+  }
+
+  76.92% {
+    opacity: 1;
+    transform: translateY(0);
+    animation-timing-function: linear;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlay-fade-in {
+  0% {
+    opacity: 0;
+    animation-timing-function: $ease-bubble;
+  }
+
+  76.92% {
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay-fade-out {
+  0% {
+    opacity: 1;
+    animation-timing-function: $ease-bubble;
+  }
+
+  76.92% {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sneak-in-mobilenav {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation-timing-function: $ease-bubble;
+  }
+
+  76.92% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes sneak-out-mobilenav {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(1, 0, 0.7, 1);
+  }
+
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,18 +1,12 @@
-// Breakpoints
-$breakpoints: (
-  small : 480px,
-  medium: 46.85em,
-  large : 61.85em,
-  widescreen: 87.5em
-);
-
 // Body
 $fs-body: (
-  null  : (16px, 1.5)
+  null  : (16px, 1.5),
 );
 
 $fs-body-large: (
-  null  : (20px, 1.5),
+  small: (16px, 1.5),
+  medium : (18px, 1.5),
+  large : (20px, 1.5)
 );
 
 $fs-body-medium: (
@@ -56,9 +50,26 @@ $fs-heading-6: (
   null  : (18px, 1.5),
 );
 
+$fs-display-1: (
+  null  : (40px, 1.2),
+  medium : (48px, 1.2),
+  large : (56px, 1.2)
+);
+
+$fs-button-small: (
+  null: (14px, 1.2),
+  medium: (16px, 1.2),
+);
+
+$fs-button-medium: (
+  null: (16px, 1.2),
+  small: (18px, 1.2),
+);
+
 %heading {
-  font-family: "Domaine Display", sans-serif !important;
+  font-family: 'Sweetly Display', sans-serif !important;
   font-weight: 500;
+  color: $color-heading;
 }
 
 %h1 {
@@ -93,7 +104,8 @@ $fs-heading-6: (
 
 %body {
   @include font-size($fs-body);
-  font-family: "Domaine Text", sans-serif;
+  font-family: 'Sweetly Text', sans-serif;
   font-style: $font-body-style;
   font-weight: $font-body-weight;
+  color: $color-text-subdued;
 }

@@ -63,11 +63,13 @@
 
   {% section 'header' %}
 
-  <main role="main" id="MainContent">
-    {{ content_for_layout }}
-  </main>
+  {% section 'hero' %}
 
-  {% section 'footer' %}
+  {% comment %} <main role="main" id="MainContent">
+    {{ content_for_layout }}
+  </main> {% endcomment %}
+
+  {% comment %} {% section 'footer' %} {% endcomment %}
 
 </body>
 </html>

@@ -7,17 +7,19 @@
 
 // Settings
 @import './variables';
+@import './tools/mixins';
+@import './settings/animations';
 @import './settings/colors';
 @import './settings/spacing';
 
 // Tools
-@import './tools/mixins';
 @import './settings/font-settings';
 @import './tools/functions';
 @import './tools/extends';
-@import './tools/reset';
 
 // Core
+@import './core/reset';
+@import './core/font';
 @import './core/base';
 @import './core/forms';
 @import './core/helpers';
@@ -37,6 +39,8 @@
 
 // Sections
 @import './sections/header';
+@import './sections/footer';
+@import './sections/hero';
 @import './sections/blog-posts';
 @import './sections/collection-list';
 @import './sections/featured-collection';
@@ -45,3 +49,7 @@
 // Templates
 @import './templates/gift_card';
 @import './templates/product';
+
+#preview-bar-iframe {
+  display: none;
+}
