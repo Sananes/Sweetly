@@ -35,8 +35,9 @@ $transition-timing: ease-in-out;
 $grid-medium: 46.85em;
 $grid-large: 61.85em;
 $grid-widescreen: 87.5em;
-$grid-max-width: 73.75em;
+$grid-max-width: 1400px;
 $grid-gutter: 30px;
+$max-width: 1400px;
 
 // Breakpoints used with the media-query mixin
 $small: 'small';
@@ -58,3 +59,12 @@ $breakpoints: (
   $large-up '(min-width: #{$grid-large})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
+
+// Breakpoints
+$bp-xs: 375px;
+$bp-smaller: 680px;
+$bp-small: 720px;
+$bp-medium: 860px;
+$bp-large: 1024px;
+$bp-large-home: 1080px;
+$bp-xl: 1280px;

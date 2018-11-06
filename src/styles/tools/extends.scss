@@ -1,0 +1,100 @@
+// Layout
+
+%layout-container {
+  max-width: $max-width;
+  padding-right: $spacing-l;
+  padding-left: $spacing-l;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media(small) {
+    padding-right: $spacing-s;
+    padding-left: $spacing-s;
+  }
+
+  @include media(medium) {
+    padding-right: $spacing-xl;
+    padding-left: $spacing-xl;
+  }
+}
+
+%layout-container--reset {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+
+  @include media(medium) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Buttons
+%button-base {
+  @include button-size(small);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $button-radius;
+  transition:
+    background-color 0.2s ease,
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+%button-disable {
+  &,
+  &:active,
+  &:focus {
+    color: $color-button-text;
+    cursor: default;
+    background-color: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+}
+
+%button-primary {
+  @extend %button-base;
+  color: $color-button-text;
+  background-color: $color-button-background;
+  border: 1px solid $color-button-background;
+
+  &:not(.disabled):hover {
+    background: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+
+  &:active,
+  &:focus {
+    background: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
+%button-secondary {
+  @extend %button-base;
+  color: $color-button-secondary-text;
+  background-color: $color-button-background;
+  border: 1px solid $color-button-background;
+
+  &:not(.disabled):hover {
+    background: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
+%clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    clear: both;
+  }
+}

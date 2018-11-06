@@ -6,12 +6,12 @@
  *
  * Usage:
  * .selector {
- *   @include media-query($medium-up) {
+ *   @include media($medium-up) {
  *     color: red;
  *   }
  * }
  */
-@mixin media-query($media-query) {
+@mixin media($media-query) {
   $breakpoint-found: false;
 
   @each $breakpoint in $breakpoints {
@@ -21,7 +21,7 @@
     @if $media-query == $name and $declaration {
       $breakpoint-found: true;
 
-      @media only screen and #{$declaration} {
+      @media only screen and (#{$declaration}) {
         @content;
       }
     }
@@ -106,4 +106,132 @@
   height: auto;
   margin: 0;
   clip: auto;
+}
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval, $rem-base: 16px) {
+  @return (strip-units($pxval) / strip-units($rem-base)) * 1rem;
+}
+
+@function rem2px($remval, $px-base: 16px) {
+  @return (strip-units($px-base) * strip-units($remval)) * 1px;
+}
+
+@function morph($color, $adjustment-value: 2) {
+  $lightness: lightness($color);
+  $light-color: false;
+
+  @if $lightness > 35% { $light-color: true; }
+
+  @if $light-color {
+    $lightness: ($lightness / 20) * $adjustment-value;
+    $color: darken($color, $lightness);
+  } @else {
+    @if $lightness < 2.5% {
+      $lightness: 30%;
+    } @else if $lightness < 7.5% {
+      $lightness: 15%;
+    }
+
+    $lightness: ($lightness / 10) * $adjustment-value;
+    $color: lighten($color, $lightness);
+  }
+
+  $saturation: saturation($color);
+  $saturated-color: false;
+
+  @if $saturation > 0% { $saturated-color: true; }
+
+  $saturation: ($saturation / 20);
+
+  @if $saturated-color {
+    @if $light-color {
+      $color: desaturate($color, $saturation);
+    } @else {
+      $color: saturate($color, $saturation);
+    }
+  }
+
+  @return $color;
+}
+
+// Check to see if a color is black and transparent
+@function color-transparent($color) {
+  @if (alpha($color) == 0 and red($color) == 0 and green($color) == 0 and blue($color) == 0) {
+    // Color is fully transparent, but black. Return opaque white for further adjustments
+    @return rgba(255, 255, 255, 1);
+  } @else {
+    @return $color;
+  }
+}
+
+// If background is dark return appropriate color for mixin
+@function border-mix($local-background, $local-dark, $local-light) {
+  @if(lightness($local-background) >= 50%) {
+    @return $local-dark;
+  } @else {
+    @return $local-light;
+  }
+}
+
+@function vw($pxval) {
+  $vw-context: $max-width / 100;
+  @return ($pxval/$vw-context) * 1vw;
+}
+
+
+// Reusable button style for changing button sizes at different break points
+@mixin button-size($button-size) {
+  $padding: false;
+  $font-size: false;
+
+  @if $button-size == small {
+    $padding: (5px, 16px);
+  } @else if $button-size == medium {
+    $padding: (12px, 18px);
+  } @else if $button-size == large {
+    $padding: (14px, 28px);
+  } @else if $button-size == x-large {
+    $padding: (14px, 28px);
+  }
+
+  padding: rem(nth($padding, 1)) rem(nth($padding, 2));
+  @include font-size($fs-body);
+  letter-spacing: 0;
 }

@@ -1,0 +1,99 @@
+// Breakpoints
+$breakpoints: (
+  small : 480px,
+  medium: 46.85em,
+  large : 61.85em,
+  widescreen: 87.5em
+);
+
+// Body
+$fs-body: (
+  null  : (16px, 1.5)
+);
+
+$fs-body-large: (
+  null  : (20px, 1.5),
+);
+
+$fs-body-medium: (
+  null  : (18px, 1.5),
+);
+
+$fs-body-small: (
+  null  : (14px, 1.5),
+);
+
+$fs-body-smaller: (
+  null  : (12px, 1.5),
+);
+
+$fs-body-smallest: (
+  null  : (10px, 1.5),
+);
+
+// Headings
+$fs-heading-1: (
+  null  : (40px, 1.2),
+);
+
+$fs-heading-2: (
+  null  : (32px, 1.2),
+);
+
+$fs-heading-3: (
+  null  : (28px, 1.3),
+);
+
+$fs-heading-4: (
+  null  : (24px, 1.4),
+);
+
+$fs-heading-5: (
+  null  : (20px, 1.5),
+);
+
+$fs-heading-6: (
+  null  : (18px, 1.5),
+);
+
+%heading {
+  font-family: "Domaine Display", sans-serif !important;
+  font-weight: 500;
+}
+
+%h1 {
+  @extend %heading;
+  @include font-size($fs-heading-1);
+}
+
+%h2 {
+  @extend %heading;
+  @include font-size($fs-heading-2);
+}
+
+%h3 {
+  @extend %heading;
+  @include font-size($fs-heading-3);
+}
+
+%h4 {
+  @extend %heading;
+  @include font-size($fs-heading-4);
+}
+
+%h5 {
+  @extend %heading;
+  @include font-size($fs-heading-5);
+}
+
+%h6 {
+  @extend %heading;
+  @include font-size($fs-heading-6);
+}
+
+%body {
+  @include font-size($fs-body);
+  font-family: "Domaine Text", sans-serif;
+  font-style: $font-body-style;
+  font-weight: $font-body-weight;
+}

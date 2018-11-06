@@ -1,0 +1,48 @@
+.site-header-container {
+  @extend %layout-container, %clearfix;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: $spacing-s;
+  padding-bottom: $spacing-s;
+
+  header {
+    display: inline-block;
+
+    h1 { margin: 0; }
+
+    .logo-image {
+      max-height: 50px;
+    }
+  }
+}
+
+.site-navigation {
+  flex-grow: 1;
+  text-align: center;
+
+  li {
+    @include font-size($fs-body);
+    display: inline-block;
+    margin: 0 $spacing-s;
+
+    a {
+      padding: $spacing-s 0;
+    }
+  }
+}
+
+.site-header-action {
+
+  > li {
+    display: inline-block;
+
+    &:first-child {
+      margin: 0 $spacing-m;
+    }
+  }
+
+  #customer_register_link {
+    @extend %button-primary;
+  }
+}

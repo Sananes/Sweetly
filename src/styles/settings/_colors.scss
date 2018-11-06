@@ -1,0 +1,15 @@
+// Primary
+$color-accent: #6A1991;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-background: $color-white;
+
+
+// Buttons
+$button-radius: 300px;
+
+$color-button-text: $color-white;
+$color-button-background: $color-accent;
+
+$color-button-secondary-text: $color-accent;
+$color-button-secondary-background: mix($color-background, $color-accent, 0.5);

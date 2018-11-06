@@ -1,0 +1,31 @@
+// Inset spacing
+$space-inset-default: 16px 16px 16px 16px;
+$space-inset-xs: 4px 4px 4px 4px;
+$space-inset-s: 8px 8px 8px 8px;
+$space-inset-m: 16px 16px 16px 16px;
+$space-inset-l: 32px 32px 32px 32px;
+$space-inset-xl: 64px 64px 64px 64px;
+
+// Stack spacing
+$spacing-stack-default: 0 0 16px 0;
+$spacing-stack-xs: 0 0 4px 0;
+$spacing-stack-s: 0 0 8px 0;
+$spacing-stack-m: 0 0 16px 0;
+$spacing-stack-l: 0 0 32px 0;
+$spacing-stack-xl: 0 0 64px 0;
+
+// General spacing
+$spacing-default: 16px;
+$spacing-xs: 4px;
+$spacing-s: 8px;
+$spacing-m: 16px;
+$spacing-l: 32px;
+$spacing-xl: 64px;
+
+// Breakpoints
+$breakpoints: (
+  small : 480px,
+  medium: 46.85em,
+  large : 61.85em,
+  widescreen: 87.5em
+);

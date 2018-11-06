@@ -8,14 +8,17 @@
 // Settings
 @import './variables';
 @import './settings/colors';
-@import './settings/font-settings';
 @import './settings/spacing';
 
 // Tools
 @import './tools/mixins';
+@import './settings/font-settings';
 @import './tools/functions';
+@import './tools/extends';
+@import './tools/reset';
 
 // Core
+@import './core/base';
 @import './core/forms';
 @import './core/helpers';
 @import './core/layout';
@@ -23,6 +26,7 @@
 @import './core/responsive-tables';
 @import './core/rte';
 @import './core/typography';
+@import './core/buttons';
 
 // Components
 @import './components/buttons';
@@ -32,6 +36,7 @@
 @import './components/responsive-images';
 
 // Sections
+@import './sections/header';
 @import './sections/blog-posts';
 @import './sections/collection-list';
 @import './sections/featured-collection';
