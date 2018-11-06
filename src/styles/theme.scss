@@ -1,12 +1,15 @@
 @charset 'UTF-8';
 
 /**
- * [replace with theme name] | Built with Slate
+ * Built with Sweetly
  */
 @import '~normalize.css/normalize';
 
 // Settings
 @import './variables';
+@import './settings/colors';
+@import './settings/font-settings';
+@import './settings/spacing';
 
 // Tools
 @import './tools/mixins';
