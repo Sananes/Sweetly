@@ -1,50 +1,67 @@
 // Hero specific breakpoints
 $hero-small: 865px;
+$hero-large: 1200px;
 
 .hero-section {
+  position: relative;
   padding-top: 40px;
   margin-top: -80px;
   background: #F7F3FE;
-  background-image: url('~images/hero-sweetly.jpg');
-  background-size: 55%;
-  background-repeat: no-repeat;
-  background-position: 90% 50%;
+  overflow: hidden;
+}
+
+.hero-banner-image {
+  @extend %center-within;
+  left: auto;
+  position: absolute;
+  right: 8%;
+  width: 50%;
+  overflow: visible;
   transition: background-image $transition-medium ease-in;
 
-  @include media(max-width medium) {
-    background-size: 60%;
-    background-position: 110% 50%;
+  @include media(max-width $hero-small) {
+    position: relative;
+    padding-top: $spacing-m;
+    z-index: 50;
+    width: 100vw;
+    transform: translateY(0);
+    margin: 0 auto;
   }
 
-  @include media(max-width $hero-small) {
-    background-size: 75vh;
-    background-position: center -5%;
-    height: 100vh;
+  img {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 .hero-section-container {
   @extend %layout-container;
+  position: relative;
 }
 
 .hero-section-content {
+  position: relative;
   max-width: rem(450px);
-  padding: rem(220px) 0;
+  padding: rem(180px) 0;
+  z-index: 100;
 
-  @include media(max-width large) {
+  @include media(max-width $hero-large) {
     max-width: rem(380px);
+    padding: rem(120px) 0;
   }
 
   @include media(max-width $hero-small) {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    max-width: rem(340px);
+    max-width: rem(460px);
+    padding-top: $spacing-s;
+    margin-top: -100px;
     padding-bottom: $spacing-xl;
     margin: 0 auto;
     text-align: center;
-    transform: translateX(-50%);
+  }
+
+  .hero-content-center-aligned & {
+    margin: 0 auto;
+    text-align: center;
   }
 }
 

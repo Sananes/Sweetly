@@ -1,0 +1,43 @@
+.features {
+
+}
+
+.features-container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.features-section-list {
+  @extend %clearfix;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $grid-max-width;
+  margin-left: -$spacing-m;
+  margin-right: -$spacing-m;
+}
+
+.features-item-illustration {
+  margin-bottom: $spacing-m;
+}
+
+.features-section-item {
+  flex: 1 1 percentage(1 / 4);
+  padding: 0 $spacing-m;
+  text-align: center;
+
+  @include media(max-width medium) {
+    flex: 1 1 percentage(1/2);
+    margin-bottom: $spacing-l;
+  }
+}
+
+.features-section-title {
+  @extend %h6;
+  font-family: $font-body;
+  margin-top: 0;
+  margin-bottom: $spacing-xs;
+}
+
+.features-section-text {
+  margin-top: $spacing-s;
+}

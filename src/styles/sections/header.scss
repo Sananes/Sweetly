@@ -1,5 +1,6 @@
 .site-header {
   position: relative;
+  z-index: 100;
   background: transparent;
   transition: background-color $transition-long ease;
   transition-delay: 0.2s;
@@ -22,6 +23,7 @@
 
     @include media(max-width medium) {
       flex: 1;
+      align-items: center;
     }
   }
 }

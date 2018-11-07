@@ -51,9 +51,9 @@ $fs-heading-6: (
 );
 
 $fs-display-1: (
-  null  : (40px, 1.2),
+  null  : (32px, 1.2),
+  small: (40px, 1.2),
   medium : (48px, 1.2),
-  large : (56px, 1.2)
 );
 
 $fs-button-small: (
@@ -67,7 +67,7 @@ $fs-button-medium: (
 );
 
 %heading {
-  font-family: 'Sweetly Display', sans-serif !important;
+  font-family: $font-heading;
   font-weight: 500;
   color: $color-heading;
 }
@@ -104,7 +104,7 @@ $fs-button-medium: (
 
 %body {
   @include font-size($fs-body);
-  font-family: 'Sweetly Text', sans-serif;
+  font-family: $font-body;
   font-style: $font-body-style;
   font-weight: $font-body-weight;
   color: $color-text-subdued;

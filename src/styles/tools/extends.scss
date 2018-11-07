@@ -33,8 +33,14 @@
 %center-within {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: auto;
   transform: translateY(-50%);
+}
+
+%center-within-reset {
+  position: inherit;
+  top: auto;
+  transform: translateY(0);
 }
 
 // Buttons

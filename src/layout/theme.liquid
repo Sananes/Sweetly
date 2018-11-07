@@ -31,6 +31,8 @@
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
 
+  <meta name="google-site-verification" content="Hh_uB2oAc3KKCnMc_8Xj6rsXtMKBzf8uHeGGZzTUskg" />
+
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
@@ -64,6 +66,8 @@
   {% section 'header' %}
 
   {% section 'hero' %}
+
+  {% include 'features' %}
 
   {% comment %} <main role="main" id="MainContent">
     {{ content_for_layout }}
