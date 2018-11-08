@@ -31,7 +31,11 @@ html {
 
 .section-text {
   @include font-size($fs-body-large);
-  margin-top: $spacing-s;
+  margin-top: $spacing-m;
+}
+
+.section-text + button {
+  margin-top: $spacing-m;
 }
 
 .section-cta {

@@ -29,9 +29,9 @@ $gutter-small: 16px;
 
 // Padding & Margin mixins
 @mixin gutter($property, $factor: 1) {
-  @include media(large) { #{$property}: $gutter-large * $factor; }
-  @include media(max-width medium) { #{$property}: $gutter-medium * $factor; }
-  @include media(max-width small) { #{$property}: $gutter-small * $factor; }
+  @include media(max-width medium) { #{$property}: $gutter-small * $factor; }
+  @include media(medium-up) { #{$property}: $gutter-medium * $factor; }
+  @include media(large-up) { #{$property}: $gutter-large * $factor; }
 }
 
 @mixin margin-gutter-right {

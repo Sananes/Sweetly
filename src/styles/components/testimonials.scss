@@ -27,6 +27,11 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+
+  @include media(max-width medium) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .testimonials-section-item {

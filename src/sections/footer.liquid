@@ -1,68 +1,132 @@
-<footer>
+<footer data-section-id="{{ section.id }}" data-section-type="footer" class="site-footer">
+  {% capture footer_social %}
+    {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+    <ul class="footer-social">
+      {% for social in social_accounts %}
+        {%- assign social_handle = social | handleize -%}
+        {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+        {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
 
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
+        {% if settings[social_link] != blank %}
           <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
+            <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+              {% include social_icon %}
+              <span class="icon-fallback-text">{{ social }}</span>
+            </a>
           </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
+        {% endif %}
 
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %}
     </ul>
-  {% endif %}
+  {% endcapture %}
 
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+  {% capture payment_icons %}
+    {% if section.settings.show_payment_icons %}
+      {% unless shop.enabled_payment_types == empty %}
+        <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
+        <ul class="payment-icons">
+          {% for type in shop.enabled_payment_types %}
+            <li>
+              {{ type | payment_type_svg_tag: class: 'icon' }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endunless %}
+    {% endif %}
+  {% endcapture %}
+
+    {% capture footer_links %}
+      <ul class="footer-links">
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              About Sweetly ®
+            </a>
+          </li>
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              On the menu
+            </a>
+          </li>
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              Recipes
+            </a>
+          </li>
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              Blog
+            </a>
+          </li>
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              Gifts
+            </a>
+          </li>
+
+          <li class="footer-links-item">
+            <a href="#" class="footer-links-item-link">
+              Contact
+            </a>
+          </li>
+
+      </ul>
+  {% endcapture %}
+
+
+  {% capture footer_newsletter %}
+    <div class="footer-newsletter">
+      <h3 class="footer-newsletter-title">Get the sweetest news</h3>
+      <div class="footer-input-wrapper">
+        <input class="footer-newsletter-input" placeholder="Enter email address" />
+        <button class="button button-large footer-newsletter-button">Submit</button>
+      </div>
+    </div>
+  {% endcapture %}
+
+  {% comment %} {% capture footer_links %}
+    {%- assign footer_linklist = section.settings.footer_linklist -%}
+    {% if linklists[footer_linklist].links.size > 0 %}
+      <ul>
+        {% for link in linklists[footer_linklist].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endcapture %} {% endcomment %}
+
+  {% capture footer_logo %}
+    <div class="footer-logo">
+      {% include 'icon' with 'sweetly' %}
+    </div>
+  {% endcapture %}
+
+  {% capture footer_copyright %}
+    <div class="footer-copyright">
+      <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+    </div>
+  {% endcapture %}
+
+  <div class="footer-container section-container">
+    {{ footer_logo }}
+    <div class="footer-link-newsletter">
+      {{ footer_links }}
+      {{ footer_newsletter }}
+    </div>
+
+    <hr class="footer-divider" />
+
+    {{ footer_menu_information }}
+
+    {% if footer_social %}
+      <div class="footer-copyright-social">
+        {{ footer_copyright }}
+        {{ footer_social }}
+      </div>
+    {% endif %}
   </div>
 </footer>
-
-{% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
-      }
-    ]
-  }
-
-{% endschema %}

@@ -1,5 +1,135 @@
-footer {
-  @extend %layout-container;
-  padding-top: $spacing-l;
-  padding-bottom: $spacing-l;
+$footer-tablet: 990px;
+$footer-mobile: 560px;
+
+.site-footer {
+  @include gutter(padding-top, 2);
+  @include gutter(padding-bottom, 1);
+  background-color: $color-footer-background;
+}
+
+.footer-logo {
+  display: block;
+  color: $color-footer-text;
+}
+
+.footer-links {
+  @include gutter(margin-top, 0.5);
+  float: left;
+
+  @include media(max-width $footer-tablet) {
+    display: block;
+    float: none;
+  }
+}
+
+.footer-links-item {
+  display: inline-block;
+  margin-left: -$spacing-s;
+
+  @include media(max-width $footer-mobile) {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+.footer-links-item-link {
+  @include font-size($fs-body-large);
+  color: $color-footer-text;
+  padding: $spacing-m $spacing-s;
+
+  @include media(max-width $footer-mobile) {
+    display: block;
+    padding: $spacing-s 0;
+  }
+}
+
+.footer-newsletter {
+  float: right;
+  width: auto;
+  margin-top: -$spacing-xl;
+
+
+  .footer-newsletter-title {
+    @extend %heading-5;
+    color: $color-footer-text;
+  }
+
+  .footer-newsletter-input {
+    @include font-size($fs-body);
+    flex: 1;
+    padding: 13px;
+    color: $color-footer-input-placeholder;
+    background: transparent;
+    border: 2px solid $color-footer-border;
+    border-radius: $button-radius 0 0 $button-radius;
+
+    &:hover {
+      color: $color-footer-border-hover;
+    }
+  }
+
+  .footer-newsletter-button {
+    margin-left: -$spacing-m;
+    color: $color-footer-text;
+    background: $color-footer-background;
+    border: 2px solid $color-footer-border;
+    border-radius: 0 $button-radius $button-radius 0;
+
+    &:hover {
+      color: $color-accent;
+      background: $color-footer-text;
+      border-color: transparent;
+    }
+  }
+
+  @include media(max-width $footer-tablet) {
+    display: block;
+    margin-top: $spacing-l;
+    float: none;
+  }
+}
+
+.footer-input-wrapper {
+  display: flex;
+}
+
+.footer-link-newsletter {
+  @extend %clearfix;
+  display: block;
+}
+
+.footer-divider {
+  @include gutter(margin-top);
+  @include gutter(margin-bottom);
+  clear: both;
+  border-top-width: 0;
+  border-color: $color-footer-border;
+}
+
+.footer-copyright {
+  color: $color-footer-link-subdued;
+  display: block;
+
+  small {
+    color: transparentize($color-footer-text, 0.5);
+    @include font-size($fs-body);
+    font-weight: normal;
+  }
+
+  .footer-copyright-social & {
+    width: 50%;
+    float: left;
+
+    @include media(max-width $footer-tablet) {
+      width: 90%;
+    }
+  }
+}
+
+.footer-social {
+  color: $color-footer-text;
+
+  .footer-copyright-social & {
+    float: right;
+  }
 }

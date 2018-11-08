@@ -1,11 +1,21 @@
 // Primary
 $color-accent: #6A1991;
+$color-accent-dark: #350D48;
 $color-secondary: #E41095;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-background: $color-white;
 $color-background-alternative: #F7F3FE;
 $color-background-pink: #FFF8FD;
+
+// Footer
+$color-footer-background: $color-accent-dark;
+$color-footer-text: $color-white;
+$color-footer-input-placeholder: mix($color-footer-text, $color-accent, 5%);
+$color-footer-border: #553465;
+$color-footer-border-hover: lighten($color-footer-border, 0.2);
+$color-footer-link: $color-white;
+$color-footer-link-subdued: transparentize($color-footer-link, 0.8);
 
 // Font colors
 $color-heading: $color-accent;

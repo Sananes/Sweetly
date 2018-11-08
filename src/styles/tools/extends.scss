@@ -1,22 +1,11 @@
 // Layout
 
 %layout-container {
+  @include padding-gutters;
   max-width: $max-width;
-  padding-right: $spacing-l;
-  padding-left: $spacing-l;
   margin-right: auto;
   margin-left: auto;
   transition: padding $transition-medium ease-in;
-
-  @include media(max-width medium) {
-    padding-right: $spacing-m;
-    padding-left: $spacing-m;
-  }
-
-  @include media(large) {
-    padding-right: $spacing-xl;
-    padding-left: $spacing-xl;
-  }
 }
 
 %layout-container--reset {

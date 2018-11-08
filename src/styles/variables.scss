@@ -55,7 +55,11 @@ $icon-size-xlarge: 64px;
 $breakpoints: (
   xsmall: 360px,
   small : 480px,
+  small-up: 481px,
   medium: 720px,
+  medium-up: 721px,
   large : 1140px,
+  large-up: 1141px,
   widescreen: 1400px,
+  widescreen-up: 1401px,
 ) !default;

@@ -1,5 +1,6 @@
 .menu-features-container {
   @include gutter(padding-bottom, 3);
+  overflow: hidden;
 }
 
 .menu-features-section-list {

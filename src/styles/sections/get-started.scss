@@ -1,0 +1,31 @@
+.getstarted-section {
+  background-color: $color-background-alternative;
+  position: relative;
+  overflow: hidden;
+
+  .section-header {
+    position: relative;
+    @include gutter(margin-top, 4);
+    @include gutter(margin-bottom, 4);
+  }
+}
+
+.pink-embelishment,
+.purple-embelishment {
+  position: absolute;
+
+  @include media(max-width medium) {
+    transform: scale(0.5);
+  }
+
+}
+
+.pink-embelishment {
+  top: -100px;
+  right: -100px;
+}
+
+.purple-embelishment {
+  bottom: -120px;
+  left: -120px;
+}
