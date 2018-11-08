@@ -1,10 +1,6 @@
-.features {
-
-}
-
 .features-container {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
 }
 
 .features-section-list {
@@ -12,8 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: $grid-max-width;
-  margin-left: -$spacing-m;
-  margin-right: -$spacing-m;
+  margin: 0 -$spacing-m;
 }
 
 .features-item-illustration {
@@ -21,18 +16,18 @@
 }
 
 .features-section-item {
+  @include padding-gutters;
   flex: 1 1 percentage(1 / 4);
-  padding: 0 $spacing-m;
   text-align: center;
 
   @include media(max-width medium) {
-    flex: 1 1 percentage(1/2);
+    flex: 1 1 percentage(1 / 2);
     margin-bottom: $spacing-l;
   }
 }
 
 .features-section-title {
-  @extend %h6;
+  @extend %heading-6;
   font-family: $font-body;
   margin-top: 0;
   margin-bottom: $spacing-xs;

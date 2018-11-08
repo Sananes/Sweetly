@@ -72,34 +72,37 @@ $fs-button-medium: (
   color: $color-heading;
 }
 
-%h1 {
+%heading-1 {
   @extend %heading;
   @include font-size($fs-heading-1);
 }
 
-%h2 {
+%heading-2 {
   @extend %heading;
   @include font-size($fs-heading-2);
 }
 
-%h3 {
+%heading-3 {
   @extend %heading;
   @include font-size($fs-heading-3);
 }
 
-%h4 {
+%heading-4 {
   @extend %heading;
   @include font-size($fs-heading-4);
+  font-family: $font-body;
 }
 
-%h5 {
+%heading-5 {
   @extend %heading;
   @include font-size($fs-heading-5);
+  font-family: $font-body;
 }
 
-%h6 {
+%heading-6 {
   @extend %heading;
   @include font-size($fs-heading-6);
+  font-family: $font-body;
 }
 
 %body {

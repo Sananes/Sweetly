@@ -1,0 +1,40 @@
+.menu-features-container {
+  @include gutter(padding-bottom, 3);
+}
+
+.menu-features-section-list {
+  @include gutter(margin-left, -1.5);
+  @include gutter(margin-right, -1.5);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $grid-max-width;
+}
+
+.menu-features-section-icon {
+  width: $icon-size-xlarge;
+  height: $icon-size-xlarge;
+}
+
+.menu-features-section-title {
+  @extend %heading-6;
+}
+
+.menu-features-section-item {
+  @include gutter(padding-left, 1.5);
+  @include gutter(padding-right, 1.5);
+  flex: 1 1 percentage(1 / 3);
+  margin-bottom: $spacing-l;
+  text-align: center;
+
+  @include media(max-width medium) {
+    flex: 1 1 percentage(1 / 2);
+  }
+
+  @include media(max-width small) {
+    flex: 1 1 percentage(1 / 1);
+  }
+}
+
+.menu-features-section-cta {
+  @include gutter(margin-top, 0.5);
+}

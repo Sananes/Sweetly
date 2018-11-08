@@ -72,7 +72,7 @@ $hero-large: 1200px;
 
 .hero-section-text {
   @include font-size($fs-body-large);
-  margin-top: $spacing-m;
+  margin-top: $spacing-xs;
   margin-bottom: 0;
 
   @include media(max-width small) {
@@ -81,7 +81,7 @@ $hero-large: 1200px;
 }
 
 .hero-section-button {
-  margin-top: $spacing-l;
+  margin-top: $spacing-m;
 
   @include media(max-width small) {
     margin-top: $spacing-m;

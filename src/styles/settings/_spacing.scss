@@ -21,3 +21,41 @@ $spacing-s: 8px;
 $spacing-m: 16px;
 $spacing-l: 32px;
 $spacing-xl: 64px;
+
+// Gutters
+$gutter-large: 32px;
+$gutter-medium: 24px;
+$gutter-small: 16px;
+
+// Padding & Margin mixins
+@mixin gutter($property, $factor: 1) {
+  @include media(large) { #{$property}: $gutter-large * $factor; }
+  @include media(max-width medium) { #{$property}: $gutter-medium * $factor; }
+  @include media(max-width small) { #{$property}: $gutter-small * $factor; }
+}
+
+@mixin margin-gutter-right {
+  @include gutter(margin-right);
+}
+
+@mixin margin-gutter-left {
+  @include gutter(margin-left);
+}
+
+@mixin padding-gutter-right {
+  @include gutter(padding-right);
+}
+
+@mixin padding-gutter-left {
+  @include gutter(padding-left);
+}
+
+@mixin margin-gutters {
+  @include margin-gutter-right;
+  @include margin-gutter-left;
+}
+
+@mixin padding-gutters {
+  @include padding-gutter-right;
+  @include padding-gutter-left;
+}

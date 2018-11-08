@@ -15,5 +15,25 @@ html {
 }
 
 .section-container {
-  @extend %layout-container;
+  @extend %layout-container, %clearfix;
+}
+
+.section-header {
+  @include gutter(margin-top, 3);
+  @include gutter(margin-bottom, 2.5);
+  text-align: center;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-text {
+  @include font-size($fs-body-large);
+  margin-top: $spacing-s;
+}
+
+.section-cta {
+  text-align: center;
 }

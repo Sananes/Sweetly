@@ -38,3 +38,19 @@ $grid-large: 990px;
 $grid-widescreen: 1400px;
 $grid-max-width: $max-width;
 $grid-gutter: 30px;
+
+// Icons
+$icon-size-smallest: 16px;
+$icon-size-smaller: 20px;
+$icon-size-small: 24px;
+$icon-size-medium: 32px;
+$icon-size-large: 48px;
+$icon-size-xlarge: 64px;
+
+// Breakpoints
+$breakpoints: (
+  small : 480px,
+  medium: 843px,
+  large : 1140px,
+  widescreen: 1400px,
+) !default;
