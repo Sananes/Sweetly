@@ -50,10 +50,15 @@ $fs-heading-6: (
   null  : (18px, 1.5),
 );
 
+$fs-menu: (
+  null: (14px, 1.5),
+  small: (16px, 1.5),
+);
+
 $fs-display-1: (
   null  : (32px, 1.2),
   small: (40px, 1.2),
-  medium : (48px, 1.2),
+  large : (48px, 1.2),
 );
 
 $fs-button-small: (
@@ -66,9 +71,17 @@ $fs-button-medium: (
   small: (18px, 1.2),
 );
 
+%menu {
+  @include font-size($fs-menu);
+  font-family: $font-menu;
+  font-weight: $font-menu-weight;
+  // text-transform: uppercase;
+  // letter-spacing: 0.5px;
+}
+
 %heading {
   font-family: $font-heading;
-  font-weight: 500;
+  font-weight: $font-heading-weight;
   color: $color-heading;
 }
 
@@ -91,18 +104,21 @@ $fs-button-medium: (
   @extend %heading;
   @include font-size($fs-heading-4);
   font-family: $font-body;
+  font-weight: $font-body-weight-medium;
 }
 
 %heading-5 {
   @extend %heading;
   @include font-size($fs-heading-5);
   font-family: $font-body;
+  font-weight: $font-body-weight-medium;
 }
 
 %heading-6 {
   @extend %heading;
   @include font-size($fs-heading-6);
   font-family: $font-body;
+  font-weight: $font-body-weight-medium;
 }
 
 %body {

@@ -43,69 +43,6 @@
   transform: translateY(0);
 }
 
-// Buttons
-%button-base {
-  @include button-size(small);
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: $button-radius;
-  transition:
-    background-color $transition-medium ease,
-    width $transition-medium ease,
-    height $transition-medium ease;
-}
-
-%button-disable {
-  &,
-  &:active,
-  &:focus {
-    color: $color-button-text;
-    cursor: default;
-    background-color: $color-button-background;
-    border: 1px solid $color-button-background;
-  }
-}
-
-%button-primary {
-  @extend %button-base;
-  color: $color-button-text;
-  background-color: $color-button-background;
-  border: 1px solid $color-button-background;
-
-  &:not(.disabled):hover {
-    background: $color-button-background-hover;
-    border: 1px solid $color-button-background-hover;
-  }
-
-  &:active,
-  &:focus {
-    background: $color-button-background-hover;
-    border: 1px solid $color-button-background-hover;
-  }
-
-  &.disabled { @extend %button-disable; }
-}
-
-%button-large {
-  @include button-size(medium);
-}
-
-%button-secondary {
-  @extend %button-base;
-  color: $color-button-secondary-text;
-  background-color: $color-button-background;
-  border: 1px solid $color-button-background;
-
-  &:not(.disabled):hover {
-    background: $color-button-background;
-    border: 1px solid $color-button-background;
-  }
-
-  &.disabled { @extend %button-disable; }
-}
-
 %clearfix {
   &::before,
   &::after {

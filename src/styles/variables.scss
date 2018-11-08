@@ -21,11 +21,15 @@ $color-success: #000000;
 $color-success-bg: #000000;
 
 // Typography
-$font-heading: 'Sweetly Display', sans-serif;
-$font-body: 'Sweetly Text', sans-serif;
+$font-heading: 'Publico', 'Sweetly Display', sans-serif;
+$font-heading-weight: 700;
+$font-body: 'Cerebri Sans', 'Sweetly Text', sans-serif;
 $font-body-weight: var(--font-body-weight);
+$font-body-weight-medium: 500;
 $font-body-style: var(--font-body-style);
 $font-body-bold-weight: var(--font-body-bold-weight);
+$font-menu: $font-body;
+$font-menu-weight: 500;
 
 // Transitions
 $transition-duration: 250ms;
@@ -49,8 +53,9 @@ $icon-size-xlarge: 64px;
 
 // Breakpoints
 $breakpoints: (
+  xsmall: 360px,
   small : 480px,
-  medium: 843px,
+  medium: 720px,
   large : 1140px,
   widescreen: 1400px,
 ) !default;

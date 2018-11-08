@@ -215,32 +215,6 @@
   @return ($pxval/$vw-context) * 1vw;
 }
 
-
-// Reusable button style for changing button sizes at different break points
-@mixin button-size($button-size) {
-  $padding: false;
-  $font-size: false;
-
-  @if $button-size == small {
-    $padding: (8px, 16px);
-    $font-size: $fs-button-small;
-  } @else if $button-size == medium {
-    $padding: (16px, 24px);
-    $font-size: $fs-button-medium;
-  } @else if $button-size == large {
-    $padding: (14px, 28px);
-    $font-size: $fs-button-medium;
-  } @else if $button-size == x-large {
-    $padding: (14px, 28px);
-    $font-size: $fs-button-medium;
-  }
-
-  padding: rem(nth($padding, 1)) rem(nth($padding, 2));
-  @include font-size($font-size);
-  letter-spacing: 0;
-}
-
-
 // Mappy breakpoints
 // -----------------
 // Output media query with focus on min-width, max-width, min-height and max-height.

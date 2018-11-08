@@ -174,14 +174,14 @@
   </div>
 </section>
 
-{% if section.settings.logo != blank %}
+{% comment %} {% if section.settings.logo != blank %}
   <style>
     .logo-image {
       display: block;
       max-width: {{ section.settings.logo_max_width }}px;
     }
   </style>
-{% endif %}
+{% endif %} {% endcomment %}
 
 {% schema %}
   {

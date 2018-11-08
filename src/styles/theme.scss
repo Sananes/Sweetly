@@ -14,8 +14,10 @@
 
 // Tools
 @import './settings/font-settings';
+@import './components/buttons';
 @import './tools/functions';
 @import './tools/extends';
+
 
 // Core
 @import './core/reset';
@@ -28,10 +30,8 @@
 @import './core/responsive-tables';
 @import './core/rte';
 @import './core/typography';
-@import './core/buttons';
 
 // Components
-@import './components/buttons';
 @import './components/hero-banner';
 @import './components/icons';
 @import './components/placeholders';

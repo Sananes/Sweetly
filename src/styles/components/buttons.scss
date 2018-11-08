@@ -1,3 +1,90 @@
+// Reusable button style for changing button sizes at different break points
+@mixin button-size($button-size) {
+  $padding: false;
+  $font-size: false;
+
+  @if $button-size == small {
+    $padding: (7px, 16px, 9px, 16px);
+    $font-size: $fs-button-small;
+  } @else if $button-size == medium {
+    $padding: (13px, 24px, 15px, 24px);
+    $font-size: $fs-button-medium;
+  } @else if $button-size == large {
+    $padding: (14px, 28px, 14px, 28px);
+    $font-size: $fs-button-medium;
+  } @else if $button-size == x-large {
+    $padding: (14px, 28px, 14px, 28px);
+    $font-size: $fs-button-medium;
+  }
+
+  padding: rem(nth($padding, 1)) rem(nth($padding, 2)) rem(nth($padding, 3)) rem(nth($padding, 4));
+  @include font-size($font-size);
+  letter-spacing: 0;
+}
+
+// Buttons
+%button-base {
+  @include button-size(small);
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: $button-radius;
+  transition:
+    background-color $transition-medium ease,
+    width $transition-medium ease,
+    height $transition-medium ease;
+}
+
+%button-disable {
+  &,
+  &:active,
+  &:focus {
+    color: $color-button-text;
+    cursor: default;
+    background-color: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+}
+
+%button-primary {
+  @extend %button-base;
+  color: $color-button-text;
+  background-color: $color-button-background;
+  border: 1px solid $color-button-background;
+
+  &:not(.disabled):hover {
+    background: $color-button-background-hover;
+    border: 1px solid $color-button-background-hover;
+  }
+
+  &:active,
+  &:focus {
+    background: $color-button-background-hover;
+    border: 1px solid $color-button-background-hover;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
+%button-large {
+  @include button-size(medium);
+}
+
+%button-secondary {
+  @extend %button-base;
+  color: $color-button-secondary-text;
+  background-color: $color-button-background;
+  border: 1px solid $color-button-background;
+
+  &:not(.disabled):hover {
+    background: $color-button-background;
+    border: 1px solid $color-button-background;
+  }
+
+  &.disabled { @extend %button-disable; }
+}
+
 .button-primary {
   @extend %button-primary;
 }

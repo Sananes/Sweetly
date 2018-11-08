@@ -1,5 +1,5 @@
 .testimonials-section {
-  background-color: $color-background-alternative;
+  background-color: $color-background-pink;
 
   .section-header {
     max-width: 500px;
@@ -45,17 +45,10 @@
   @include gutter(padding-bottom);
   @include padding-gutters;
   background: $color-background;
-  box-shadow: 2px -2px 39px 0px rgba(0,0,0,0.15);
-}
-
-.testimonials-section-rating {
-
-}
-
-.testimonials-section-title {
-
+  box-shadow: 2px -2px 39px 0 rgba(0, 0, 0, 0.15);
 }
 
 .testimonials-section-text {
   @include font-size($fs-body-large);
+  margin-bottom: 0;
 }
