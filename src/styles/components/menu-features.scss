@@ -11,20 +11,30 @@
   max-width: $grid-max-width;
 }
 
-.menu-features-section-icon {
-  width: $icon-size-xlarge;
-  height: $icon-size-xlarge;
+.menu-features-item-icon {
+  color: $color-accent;
+
+  svg {
+    width: $icon-size-large;
+    height: $icon-size-large;
+  }
 }
 
 .menu-features-section-title {
-  @extend %heading-6;
+  @extend %heading-5;
+  margin-bottom: 0;
+}
+
+.menu-features-section-text {
+  margin-top: $spacing-s;
+  margin-bottom: 0;
 }
 
 .menu-features-section-item {
   @include gutter(padding-left, 1.5);
   @include gutter(padding-right, 1.5);
   flex: 1 1 percentage(1 / 3);
-  margin-bottom: $spacing-l;
+  margin-bottom: $spacing-xl;
   text-align: center;
 
   @include media(max-width medium) {

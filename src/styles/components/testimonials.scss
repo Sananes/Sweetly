@@ -6,6 +6,11 @@
     position: relative;
     margin-left: 0;
     text-align: left;
+
+    @include media(max-width medium) {
+      margin-left: auto;
+      text-align: center;
+    }
   }
 }
 
@@ -22,11 +27,12 @@
 }
 
 .testimonials-section-list {
-  @include gutter(margin-left, -1);
-  @include gutter(margin-right, -1);
+  @include gutter(margin-left, -0.5);
+  @include gutter(margin-right, -0.5);
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: stretch;
 
   @include media(max-width medium) {
     margin-left: 0;
@@ -35,7 +41,9 @@
 }
 
 .testimonials-section-item {
-  @include padding-gutters;
+  @include gutter(padding-left, 0.5);
+  @include gutter(padding-right, 0.5);
+  display: flex;
   flex: 1 1 percentage(1 / 3);
   text-align: center;
 
@@ -50,10 +58,12 @@
   @include gutter(padding-bottom);
   @include padding-gutters;
   background: $color-background;
-  box-shadow: 2px -2px 39px 0 rgba(0, 0, 0, 0.15);
+  // box-shadow: 2px -2px 39px 0 rgba(0, 0, 0, 0.15);
 }
 
 .testimonials-section-text {
   @include font-size($fs-body-large);
+  flex-grow: 1;
+  align-self: center;
   margin-bottom: 0;
 }

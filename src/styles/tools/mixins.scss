@@ -135,6 +135,9 @@
     @if (length($fs-font-size) > 1) {
       line-height: nth($fs-font-size, 2);
     }
+    @if (length($fs-font-size) > 2) {
+      letter-spacing: nth($fs-font-size, 3);
+    }
   }
   @else {
     font-size: $fs-font-size;

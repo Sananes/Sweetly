@@ -21,15 +21,17 @@ $color-success: #000000;
 $color-success-bg: #000000;
 
 // Typography
-$font-heading: 'Publico', 'Sweetly Display', sans-serif;
-$font-heading-weight: 700;
-$font-body: 'Cerebri Sans', 'Sweetly Text', sans-serif;
-$font-body-weight: var(--font-body-weight);
-$font-body-weight-medium: 500;
+$font-heading: 'Sweetly Display', sans-serif;
+$font-heading-weight: 600;
+$font-body: 'Sweetly Text', sans-serif;
+$font-body-weight: normal;
+$font-body-weight-medium: 600;
 $font-body-style: var(--font-body-style);
 $font-body-bold-weight: var(--font-body-bold-weight);
 $font-menu: $font-body;
 $font-menu-weight: 500;
+$font-button: $font-body;
+$font-button-weight: 600;
 
 // Transitions
 $transition-duration: 250ms;
@@ -39,7 +41,7 @@ $transition-timing: ease-in-out;
 $max-width: 1400px;
 $grid-medium: 750px;
 $grid-large: 990px;
-$grid-widescreen: 1400px;
+$grid-widescreen: $max-width;
 $grid-max-width: $max-width;
 $grid-gutter: 30px;
 
@@ -60,6 +62,6 @@ $breakpoints: (
   medium-up: 721px,
   large : 1140px,
   large-up: 1141px,
-  widescreen: 1400px,
-  widescreen-up: 1401px,
+  widescreen: $max-width,
+  widescreen-up: $max-width + 1,
 ) !default;

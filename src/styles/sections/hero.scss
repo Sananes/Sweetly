@@ -40,10 +40,11 @@ $hero-large: 1200px;
 }
 
 .hero-section-content {
+  @include gutter(padding-top, 5.25);
+  @include gutter(padding-bottom, 5);
   position: relative;
   z-index: 100;
   max-width: rem(450px);
-  padding: rem(180px) 0;
 
   @include media(max-width $hero-large) {
     max-width: rem(460px);
@@ -72,16 +73,12 @@ $hero-large: 1200px;
 
 .hero-section-text {
   @include font-size($fs-body-large);
-  margin-top: $spacing-xs;
+  @include gutter(margin-top, 0.25);
   margin-bottom: 0;
-
-  @include media(max-width small) {
-    margin-top: $spacing-s;
-  }
 }
 
 .hero-section-button {
-  margin-top: $spacing-l;
+  @include gutter(margin-top);
 
   @include media(max-width small) {
     margin-top: $spacing-m;

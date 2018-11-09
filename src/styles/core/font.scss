@@ -1,87 +1,47 @@
 @font-face {
-  font-family: 'Sweetly Display';
-  src: url('~fonts/DomaineDispSemibold.woff2') format('woff2'),
-      url('~fonts/DomaineDispSemibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineText-Regular.woff2') format('woff2'),
-      url('~fonts/DomaineText-Regular.woff') format('woff');
+  src: url('~fonts/BasisGrotesquePro-Regular.woff2') format('woff2'),
+      url('~fonts/BasisGrotesquePro-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Sweetly Display';
-  src: url('~fonts/DomaineDispSemibold-Italic.woff2') format('woff2'),
-      url('~fonts/DomaineDispSemibold-Italic.woff') format('woff');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineText-RegularItalic.woff2') format('woff2'),
-      url('~fonts/DomaineText-RegularItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineTextMedium.woff2') format('woff2'),
-      url('~fonts/DomaineTextMedium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineText-Bold.woff2') format('woff2'),
-      url('~fonts/DomaineText-Bold.woff') format('woff');
+  src: url('~fonts/CircularStd-Bold.woff2') format('woff2'),
+      url('~fonts/CircularStd-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineText-BoldItalic.woff2') format('woff2'),
-      url('~fonts/DomaineText-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Sweetly Text';
-  src: url('~fonts/DomaineTextMedium-Italic.woff2') format('woff2'),
-      url('~fonts/DomaineTextMedium-Italic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Cerebri Sans';
-  src: url('~fonts/CerebriSans-Medium.woff2') format('woff2'),
-      url('~fonts/CerebriSans-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cerebri Sans';
-  src: url('~fonts/CerebriSans-Regular.woff2') format('woff2'),
-      url('~fonts/CerebriSans-Regular.woff') format('woff');
+  font-family: 'Sweetly Display';
+  src: url('~fonts/CircularStd-Book.woff2') format('woff2'),
+      url('~fonts/CircularStd-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cerebri Sans';
-  src: url('~fonts/CerebriSans-MediumItalic.woff2') format('woff2'),
-      url('~fonts/CerebriSans-MediumItalic.woff') format('woff');
+  font-family: 'Sweetly Text';
+  src: url('~fonts/BasisGrotesquePro-Bold.woff2') format('woff2'),
+      url('~fonts/BasisGrotesquePro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sweetly Display';
+  src: url('~fonts/CircularStd-Medium.woff2') format('woff2'),
+      url('~fonts/CircularStd-Medium.woff') format('woff');
   font-weight: 500;
-  font-style: italic;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sweetly Text';
+  src: url('~fonts/BasisGrotesquePro-Medium.woff2') format('woff2'),
+      url('~fonts/BasisGrotesquePro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }

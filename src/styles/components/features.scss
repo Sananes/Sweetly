@@ -1,9 +1,15 @@
 .features-container {
-  padding-top: $spacing-xl;
-  padding-bottom: $spacing-xl;
+  @include gutter(padding-top, 2.5);
+  @include gutter(padding-bottom, 2);
+
+  @include media(max-width medium) {
+    @include gutter(padding-top, 3);
+  }
 }
 
 .features-section-list {
+  @include gutter(margin-left, -0.5);
+  @include gutter(margin-right, -0.5);
   @extend %clearfix;
   display: flex;
   flex-wrap: wrap;
@@ -16,19 +22,25 @@
 }
 
 .features-section-item {
-  @include padding-gutters;
+  @include gutter(padding-left, 0.5);
+  @include gutter(padding-right, 0.5);
   flex: 1 1 percentage(1 / 4);
-  text-align: center;
 
-  @include media(max-width medium) {
+  @include media(max-width large) {
     flex: 1 1 percentage(1 / 2);
     margin-bottom: $spacing-l;
+    text-align: left;
+  }
+
+  @include media(max-width medium) {
+    flex: 1 1 percentage(1 / 1);
+    margin-bottom: $spacing-l;
+    text-align: center;
   }
 }
 
 .features-section-title {
-  @extend %heading-6;
-  font-family: $font-body;
+  @extend %heading-5;
   margin-top: 0;
   margin-bottom: $spacing-xs;
 }

@@ -35,7 +35,7 @@ $footer-mobile: 560px;
 .footer-links-item-link {
   @include font-size($fs-body-large);
   color: $color-footer-text;
-  padding: $spacing-m $spacing-s;
+  padding: $spacing-m $spacing-m;
 
   @include media(max-width $footer-mobile) {
     display: block;
