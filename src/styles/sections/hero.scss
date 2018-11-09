@@ -6,8 +6,16 @@ $hero-large: 1200px;
   position: relative;
   padding-top: 40px;
   margin-top: -80px;
-  background: #F7F3FE;
+  background: $color-background-alternative url('~images/sweetly-hero.jpg') no-repeat center center;
+  background-size: cover;
   overflow: hidden;
+
+  &.hero-content-center-aligned {
+    @include media(max-width $hero-small) {
+      background-size: 120%;
+      background-position: bottom center;
+    }
+  }
 }
 
 .hero-banner-image {
@@ -61,8 +69,13 @@ $hero-large: 1200px;
   }
 
   .hero-content-center-aligned & {
+    max-width: rem(550px);
     margin: 0 auto;
     text-align: center;
+
+    @include media(max-width $hero-small) {
+      padding: rem(140px) 0 rem(200px) 0;
+    }
   }
 }
 

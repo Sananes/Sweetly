@@ -10,13 +10,13 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<section data-section-id="{{ section.id }}" data-section-type="hero" class="hero-section">
+<section data-section-id="{{ section.id }}" data-section-type="hero" class="hero-section hero-content-center-aligned">
   <div class="hero-section-container section-container">
-    <div class="hero-banner-image">
+    {% comment %} <div class="hero-banner-image">
       <img src="{{ 'hero-sweetly.jpg' | asset_url }}" />
-    </div>
+    </div> {% endcomment %}
     <div class="hero-section-content">
-      <h2 class="hero-section-title">Sweeten your life</h2>
+      <h2 class="hero-section-title">Sweeten up your life</h2>
       <p class="hero-section-text">Get everything you need to make amazing desserts  delivered in one perfectly customized box.</p>
       <button class="hero-section-button button-primary button-large">View our boxes</button>
     </div>

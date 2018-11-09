@@ -9,6 +9,10 @@
   display: flex;
   flex-wrap: wrap;
   max-width: $grid-max-width;
+
+  .menu-features-section-has-image & {
+    margin-top: rem(-50px);
+  }
 }
 
 .menu-features-item-icon {
@@ -48,4 +52,9 @@
 
 .menu-features-section-cta {
   @include gutter(margin-top, 0.5);
+}
+
+.menu-features-section-image {
+  width: 500px;
+  margin: 0 auto;
 }

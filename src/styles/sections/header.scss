@@ -36,6 +36,8 @@ $menu-breakpoint: 860px;
 
   header {
     display: inline-block;
+    flex: 1;
+    margin-left: auto;
 
     h1 { margin: 0; }
 
@@ -51,12 +53,12 @@ $menu-breakpoint: 860px;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   padding-top: $spacing-s;
   padding-bottom: $spacing-s;
 }
 
 .site-navigation {
-  flex-grow: 1;
   text-align: center;
 
   li {
@@ -82,6 +84,10 @@ $menu-breakpoint: 860px;
 }
 
 .site-header-action {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
 
   > li {
     @extend %menu;
