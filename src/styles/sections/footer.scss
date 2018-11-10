@@ -48,6 +48,9 @@ $footer-mobile: 560px;
   width: 30%;
   margin-top: -$spacing-xl;
 
+  @include media(max-width $footer-tablet) {
+    width: auto;
+  }
 
   .footer-newsletter-title {
     @extend %heading-5;
