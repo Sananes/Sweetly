@@ -10,7 +10,7 @@ $placeholder-color-background: #f9fafb;
 
 // Other colors
 $color-accent: var(--color-accent);
-$color-border: var(--color-border);
+$color-border: #F1E7EE;
 
 // Helper colors for form error states
 $color-disabled: #000000;
@@ -38,7 +38,7 @@ $transition-duration: 250ms;
 $transition-timing: ease-in-out;
 
 // Grid
-$max-width: 1400px;
+$max-width: 1280px;
 $grid-medium: 750px;
 $grid-large: 990px;
 $grid-widescreen: $max-width;

@@ -1,0 +1,61 @@
+.featured-recipes-section {
+  @include gutter(padding-bottom, 3);
+  background: $color-background-pink;
+
+  .section-header {
+    @include gutter(margin-top, 2);
+    @include gutter(margin-bottom, 2);
+  }
+}
+
+.featured-recipes-list {
+  @extend %grid;
+  display: flex;
+  flex-wrap: wrap;
+
+  .product-item {
+    @include gutter(padding-left, 0.5);
+    @include gutter(padding-right, 0.5);
+    flex: 0 1 percentage(1 / 3);
+
+    @include media(max-width medium) {
+      @include gutter(margin-bottom);
+      flex: 0 1 percentage(1 / 1);
+    }
+  }
+}
+
+.product-item-inner {
+  box-shadow: 0 0 0 1px rgba(17, 35, 56, 0.03), 0 1px 3px rgba(17, 35, 56, 0.03), 0 2px 8px rgba(17, 35, 56, 0.1);
+  background: $color-white;
+}
+
+.product-item-content,
+.product-item-details {
+  @include padding-gutters;
+}
+
+.product-item-content {
+  @include gutter(padding-top, 0.5);
+  @include gutter(padding-bottom, 0.5);
+
+  & > h3 {
+    @extend %heading-5;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: $spacing-s;
+  }
+}
+
+.product-item-details {
+  @include gutter(padding-top, 0.5);
+  @include gutter(padding-bottom, 0.5);
+  border-top: 1px solid $color-border;
+}
+
+.product-item-image {
+  display: block;
+}

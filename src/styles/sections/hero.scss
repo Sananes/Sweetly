@@ -6,7 +6,10 @@ $hero-large: 1200px;
   position: relative;
   padding-top: 40px;
   margin-top: -80px;
-  background: $color-background-alternative url('~images/sweetly-hero.jpg') no-repeat center center;
+  background-image: url('~images/sweetly-hero.jpg');
+  background-color: $color-background-alternative;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   overflow: hidden;
 
