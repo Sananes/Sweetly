@@ -30,6 +30,18 @@ $gutter-large: 32px;
 $gutter-medium: 24px;
 $gutter-small: 16px;
 
+
+// Grid
+$neat-grid: (
+  columns: 12,
+  gutter: $gutter-large,
+);
+
+// Vertical Gutters
+$vgutter-large: 48px;
+$vgutter-medium: 32px;
+$vgutter-small: 24px;
+
 // Padding & Margin mixins
 @mixin gutter($property, $factor: 1) {
   @include media(max-width medium) { #{$property}: $gutter-small * $factor; }
@@ -37,28 +49,60 @@ $gutter-small: 16px;
   @include media(large-up) { #{$property}: $gutter-large * $factor; }
 }
 
-@mixin margin-gutter-right {
-  @include gutter(margin-right);
+@mixin vgutter($property, $factor: 1) {
+  @include media(max-width medium) {
+    #{property}: $gutter-small * $factor;
+  }
+
+  @include media(medium-up) {
+    #{property}: $gutter-medium * $factor;
+  }
+
+  @include media(large-up) {
+    #{property}: $gutter-large * $factor;
+  }
 }
 
-@mixin margin-gutter-left {
-  @include gutter(margin-left);
+// Specific Margins
+@mixin margin-gutter-right($factor: 1) {
+  @include gutter(margin-right, $factor);
 }
 
-@mixin padding-gutter-right {
-  @include gutter(padding-right);
+@mixin margin-gutter-left($factor: 1) {
+  @include gutter(margin-left, $factor);
 }
 
-@mixin padding-gutter-left {
-  @include gutter(padding-left);
+@mixin margin-gutter-top($factor: 1) {
+  @include vgutter(margin-top, $factor);
 }
 
-@mixin margin-gutters {
-  @include margin-gutter-right;
-  @include margin-gutter-left;
+@mixin margin-gutter-bottom($factor: 1) {
+  @include vgutter(margin-bottom, $factor);
 }
 
-@mixin padding-gutters {
-  @include padding-gutter-right;
-  @include padding-gutter-left;
+@mixin margin-gutters($factor: 1) {
+  @include margin-gutter-right($factor);
+  @include margin-gutter-left($factor);
+}
+
+// Specific Paddings
+@mixin padding-gutter-right($factor: 1) {
+  @include gutter(padding-right, $factor);
+}
+
+@mixin padding-gutter-left($factor: 1) {
+  @include gutter(padding-left, $factor);
+}
+
+@mixin padding-gutter-top($factor: 1) {
+  @include vgutter(padding-top, $factor);
+}
+
+@mixin padding-gutter-bottom($factor: 1) {
+  @include vgutter(padding-bottom, $factor);
+}
+
+@mixin padding-gutters($factor: 1) {
+  @include padding-gutter-right($factor);
+  @include padding-gutter-left($factor);
 }

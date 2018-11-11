@@ -20,8 +20,12 @@
 }
 
 %grid {
-  @include gutter(margin-left, -0.5);
-  @include gutter(margin-right, -0.5);
+  @extend %clearfix;
+  @include margin-gutter-left(-0.5);
+  @include margin-gutter-right(-0.5);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $grid-max-width;
 }
 
 %center-within {
@@ -38,6 +42,18 @@
 }
 
 %clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin clearfix {
   &::before,
   &::after {
     display: table;

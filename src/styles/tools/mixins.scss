@@ -474,3 +474,26 @@
 
   @return $res;
 }
+
+@mixin col($col, $amount) {
+  $amount: $amount;
+  $width: percentage($col / $amount);
+  @include margin-gutter-left(0.5);
+  @include margin-gutter-right(0.5);
+  float: left;
+
+  @include media(max-width medium) {
+    width: calc(#{$width} - #{$gutter-small});
+  }
+
+  @include media(medium-up) {
+    width: calc(#{$width} - #{$gutter-medium});
+  }
+  @include media(large-up) {
+    width: calc(#{$width} - #{$gutter-large});
+  }
+
+  &:nth-child(#{$amount}n+1) {
+    clear: both;
+  }
+}

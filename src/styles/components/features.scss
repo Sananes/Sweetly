@@ -8,13 +8,7 @@
 }
 
 .features-section-list {
-  @include gutter(margin-left, -0.5);
-  @include gutter(margin-right, -0.5);
-  @extend %clearfix;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $grid-max-width;
-  margin: 0 -$spacing-m;
+  @extend %grid;
 }
 
 .features-item-illustration {
@@ -22,18 +16,16 @@
 }
 
 .features-section-item {
-  @include gutter(padding-left, 0.5);
-  @include gutter(padding-right, 0.5);
-  flex: 1 1 percentage(1 / 4);
+  @include col(1, 4);
 
   @include media(max-width large) {
-    flex: 1 1 percentage(1 / 2);
+    @include col(2, 4);
     margin-bottom: $spacing-l;
     text-align: left;
   }
 
   @include media(max-width medium) {
-    flex: 1 1 percentage(1 / 1);
+    @include col(1, 1);
     margin-bottom: $spacing-l;
     text-align: center;
   }
