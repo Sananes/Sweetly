@@ -7,6 +7,9 @@ $color-black: #000000;
 $color-background: $color-white;
 $color-background-alternative: #F7F3FE;
 $color-background-pink: #FFF8FD;
+$color-box-shadow: transparentize(mix($color-background, $color-accent, 50%), 0.9);
+$box-shadow: 0 0 0 1px $color-box-shadow, 0 1px 3px $color-box-shadow, 0 2px 8px $color-box-shadow;
+$box-shadow-hover: $box-shadow, 0 12px 24px $color-box-shadow;
 
 // Footer
 $color-footer-background: $color-accent-dark;

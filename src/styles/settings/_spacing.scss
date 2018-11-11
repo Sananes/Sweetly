@@ -30,37 +30,23 @@ $gutter-large: 32px;
 $gutter-medium: 24px;
 $gutter-small: 16px;
 
-
-// Grid
-$neat-grid: (
-  columns: 12,
-  gutter: $gutter-large,
-);
-
 // Vertical Gutters
 $vgutter-large: 48px;
 $vgutter-medium: 32px;
 $vgutter-small: 24px;
 
 // Padding & Margin mixins
+@mixin vgutter($property, $factor: 1) {
+  @include media(max-width medium) { #{$property}: $vgutter-small * $factor; }
+  @include media(medium-up) { #{$property}: $vgutter-medium * $factor; }
+  @include media(large-up) { #{$property}: $vgutter-large * $factor; }
+}
+
+
 @mixin gutter($property, $factor: 1) {
   @include media(max-width medium) { #{$property}: $gutter-small * $factor; }
   @include media(medium-up) { #{$property}: $gutter-medium * $factor; }
   @include media(large-up) { #{$property}: $gutter-large * $factor; }
-}
-
-@mixin vgutter($property, $factor: 1) {
-  @include media(max-width medium) {
-    #{property}: $gutter-small * $factor;
-  }
-
-  @include media(medium-up) {
-    #{property}: $gutter-medium * $factor;
-  }
-
-  @include media(large-up) {
-    #{property}: $gutter-large * $factor;
-  }
 }
 
 // Specific Margins
@@ -85,6 +71,11 @@ $vgutter-small: 24px;
   @include margin-gutter-left($factor);
 }
 
+@mixin margin-vgutters($factor: 1) {
+  @include margin-gutter-top($factor);
+  @include margin-gutter-bottom($factor);
+}
+
 // Specific Paddings
 @mixin padding-gutter-right($factor: 1) {
   @include gutter(padding-right, $factor);
@@ -105,4 +96,9 @@ $vgutter-small: 24px;
 @mixin padding-gutters($factor: 1) {
   @include padding-gutter-right($factor);
   @include padding-gutter-left($factor);
+}
+
+@mixin padding-vgutters($factor: 1) {
+  @include padding-gutter-top($factor);
+  @include padding-gutter-bottom($factor);
 }

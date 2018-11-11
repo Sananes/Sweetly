@@ -4,8 +4,6 @@
 
   .section-header {
     position: relative;
-    @include gutter(margin-top, 4);
-    @include gutter(margin-bottom, 4);
   }
 }
 
