@@ -4,11 +4,20 @@ $menu-breakpoint: 860px;
   position: relative;
   z-index: 150;
   background: transparent;
-  transition: background-color $transition-long ease;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: background-color $transition-long ease,
+              opacity $transition-long ease,
+              transform $transition-long $ease-out-quad;
   transition-delay: 0.2s;
 
   &:hover {
     background: $color-background;
+  }
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @include media(medium) {

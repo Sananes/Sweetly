@@ -1,3 +1,5 @@
+$feature-items: 4;
+
 .features-container {
   @include gutter(padding-top, 2.5);
   @include gutter(padding-bottom, 2);
@@ -39,4 +41,45 @@
 
 .features-section-text {
   margin-top: $spacing-s;
+}
+
+
+.features-section {
+  @for $i from 0 to $feature-items {
+    .features-section-item:nth-child(#{$i + 1}) {
+      .features-section-text,
+      .features-section-title,
+      .features-item-illustration {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity $transition-long ease-in-out,
+        transform $transition-long ease-in-out;
+      }
+    }
+  }
+}
+
+.features-section.animate {
+  @for $i from 0 to $feature-items {
+    .features-section-item:nth-child(#{$i + 1}) {
+      .features-section-text,
+      .features-section-title,
+      .features-item-illustration {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .features-item-illustration {
+        transition-delay: #{$i * (500 * 1)}ms;
+      }
+
+      .features-section-title {
+        transition-delay: #{$i * (500 * 1)}ms;
+      }
+
+      .features-section-text {
+        transition-delay: #{$i * (500 * 1)}ms;
+      }
+    }
+  }
 }

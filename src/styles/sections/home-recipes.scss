@@ -17,7 +17,6 @@
     background: $color-white;
     box-shadow: $box-shadow;
     cursor: pointer;
-    transition: box-shadow $transition-long ease;
 
     &:hover {
       box-shadow: $box-shadow-hover;
@@ -64,7 +63,6 @@
     display: block;
     transform: scale(1);
     transition: transform $transition-long ease-in-out;
-    transition-delay: 0.2s;
 
     .product-item:hover & {
       transform: scale(1.05);

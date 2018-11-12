@@ -56,6 +56,15 @@ $hero-large: 1200px;
   position: relative;
   z-index: 100;
   max-width: rem(450px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform $transition-long $ease-out-quad,
+              opacity $transition-short ease;
+
+  .animate & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @include media(max-width $hero-large) {
     max-width: rem(460px);
