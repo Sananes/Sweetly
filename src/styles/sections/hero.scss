@@ -56,15 +56,6 @@ $hero-large: 1200px;
   position: relative;
   z-index: 100;
   max-width: rem(450px);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform $transition-long $ease-out-quad,
-              opacity $transition-short ease;
-
-  .animate & {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   @include media(max-width $hero-large) {
     max-width: rem(460px);
@@ -91,6 +82,20 @@ $hero-large: 1200px;
   }
 }
 
+.hero-section-title,
+.hero-section-text,
+.hero-section-button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1s $ease-out-quad,
+              opacity $transition-short ease;
+
+  .animate & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-section-title {
   @include font-size($fs-display-1);
   margin: 0;
@@ -99,11 +104,12 @@ $hero-large: 1200px;
 .hero-section-text {
   @include font-size($fs-body-large);
   @include gutter(margin-top, 0.25);
-  margin-bottom: 0;
+  transition-delay: 0.2s;
 }
 
 .hero-section-button {
   @include gutter(margin-top);
+  transition-delay: 0.4s;
 
   @include media(max-width small) {
     margin-top: $spacing-m;
